@@ -18,6 +18,11 @@ body {
     color: white !important;
 }
 
+.bg-red {
+    background: #b71c1c !important;
+    color: white !important;
+}
+
 .bcg-color {
     color: #0089CC;
 }

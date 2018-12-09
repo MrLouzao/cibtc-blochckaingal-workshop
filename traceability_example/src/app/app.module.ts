@@ -21,6 +21,8 @@ import { HeaderComponent } from './header/header.component';
 import { CdkTableModule } from '@angular/cdk/table';
 import { NgxQRCodeModule } from 'ngx-qrcode2';
 import { BlockchainConnectionDataComponent } from './header/blockchain-connection-data/blockchain-connection-data.component';
+import { LocalStorageBlockchainData } from './app-common/local-storage-blockchain-data';
+
 
 @NgModule({
   declarations: [
@@ -44,9 +46,12 @@ import { BlockchainConnectionDataComponent } from './header/blockchain-connectio
     MetaModule,
     TraceabilityModule,
     NgxQRCodeModule,
-    MatIconModule
+    MatIconModule,
+    CommonModule
   ],
-  providers: [],
+  providers: [
+    LocalStorageBlockchainData
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

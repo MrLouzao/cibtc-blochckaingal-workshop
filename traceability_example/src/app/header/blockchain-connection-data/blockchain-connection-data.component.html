@@ -1,7 +1,7 @@
 <div id="connection">
   <div id="status">
-    <span><mat-icon [ngClass]="{'conn-ok': _netState == true, 'conn-error': _netState == false}" style="transform: scale(.5) translateY(12px);">fiber_manual_record</mat-icon> Ropsten</span>
-    <span>Addres: 0xdasdsad</span>
+    <span><mat-icon [ngClass]="{'conn-ok': _netState == true, 'conn-error': _netState == false}" style="transform: scale(.5) translateY(12px);">fiber_manual_record</mat-icon> {{_network}}</span>
+    <span>Contrato: {{_address}}</span>
   </div>
   <div id="config">
     <mat-icon class="clickable">settings</mat-icon>

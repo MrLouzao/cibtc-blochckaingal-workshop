@@ -1,0 +1,17 @@
+form {
+    display: flex;
+    flex-direction: column;  
+}
+
+.centered-content {
+    display: flex;
+    justify-content: center;
+}
+
+.action-button {
+    margin: 0 1em;
+}
+
+.action-button button {
+    margin-right: .5em;
+}

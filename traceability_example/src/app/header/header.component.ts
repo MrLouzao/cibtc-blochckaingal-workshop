@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { LocalStorageBlockchainData } from '../app-common/local-storage-blockchain-data';
+
 
 @Component({
   selector: 'header',
@@ -6,8 +8,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-
-  constructor() { }
 
   ngOnInit() {
   }

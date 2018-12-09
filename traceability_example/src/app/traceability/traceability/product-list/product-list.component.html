@@ -1,0 +1,36 @@
+<mat-card style="width: 90%;">
+  <div>
+    <h5 style="margin-top: .1em; margin-bottom: .1em"> Productos rexistrados: {{this.tableData.filteredData.length}}</h5>
+
+    <mat-table class="custom-card" [dataSource]="tableData" matSort>
+        <mat-header-row *matHeaderRowDef="displayedColums"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColums;"></mat-row>
+  
+        <ng-container matColumnDef="id">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Identificador </mat-header-cell>
+            <mat-cell *matCellDef="let element; let i = index"> 
+                <mat-icon class="clickable" (click)="detailProduct(element)">zoom_in</mat-icon>
+                {{element.id}}
+                </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="lastState">
+            <mat-header-cell *matHeaderCellDef> Último estado </mat-header-cell>
+            <mat-cell *matCellDef="let element">
+                {{element.lastState}} </mat-cell>
+        </ng-container>
+
+    </mat-table>
+  </div>
+
+  <div *ngIf="!showNewTrackForm">
+    <p>
+        <button mat-mini-fab class="bg-green" style="transform: scale(.7)" (click)="newProduct()">
+            <mat-icon>add</mat-icon>
+        </button>
+        Engadir novo producto
+    </p>
+  </div>
+  
+
+</mat-card>

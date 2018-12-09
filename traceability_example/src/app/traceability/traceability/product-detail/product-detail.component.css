@@ -1,0 +1,21 @@
+.two-col {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+#qr-code {
+    margin: .5em;
+    border-width: 0;
+    border-right-width: 1px;
+    border-style: solid;
+    border-right-color: rgba(0,0,0,.12);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+ngx-qrcode .qrcode {
+    min-height: 20vw;
+}

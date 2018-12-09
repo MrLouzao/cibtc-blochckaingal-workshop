@@ -1,0 +1,28 @@
+#connection {
+    color: white;
+    display: flex;
+    text-align: right;
+}
+
+#status {
+    display: flex;
+    flex-direction: column;
+    margin-right: .5em;
+    font-size: .7em;
+    font-weight: lighter;
+}
+
+#config {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: .5em;
+}
+
+.conn-error {
+    color: #f44336;
+}
+
+.conn-ok {
+    color: #4caf50;
+}

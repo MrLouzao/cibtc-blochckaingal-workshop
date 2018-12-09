@@ -1,0 +1,14 @@
+<mat-card style="width: 90%; margin-top: 1em;">
+  <h4 class="botton-line" style="padding: .5em;">Detalle do producto <span class="clickable bcg-color" (click)="hide.emit()">(Ocultar)</span></h4>
+  <div class="two-col">
+    <div id="qr-code" style="min-width: 35%;">
+      <ngx-qrcode id="qr-image" qrc-class="qr-img" *ngIf="productId" [qrc-element-type]="elementType" [qrc-value] = "productId"></ngx-qrcode>
+      <p class="no-margin">{{productId}}</p>
+    </div>
+    <div>
+      <h4>Eventos</h4>
+    </div>
+  </div>
+</mat-card>
+
+

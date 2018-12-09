@@ -1,0 +1,42 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import url( 'https://fonts.googleapis.com/css?family=Roboto:400,700|Material+Icons');
+
+body {
+    padding: 0 !important;
+    margin: 0 !important;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+.blue-bg {
+    background: #151c1f;
+}
+
+.bg-green {
+    background: #33691E !important;
+    color: white !important;
+}
+
+.bcg-color {
+    color: #0089CC;
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+.botton-line {
+    border-width: 0;
+    border-bottom-width: 1px;
+    border-style: solid;
+    border-bottom-color: rgba(0,0,0,.12);
+}
+
+.qr-img > img {
+    width: 20vw;
+}
+
+.no-margin {
+    margin: 0;
+}

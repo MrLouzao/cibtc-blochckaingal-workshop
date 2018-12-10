@@ -1,8 +1,10 @@
+<app-header (openSettings)="ready=false"></app-header>
+
 <div id="traceability">
     <h1>Trazabilidade de productos</h1>
 
     <div *ngIf="!ready">
-        <p (click)="ready = true">Preparando a carga do contrato</p>
+        <contract-load (contractLoaded)="ready=true"></contract-load>
     </div>
 
     <div *ngIf="ready">

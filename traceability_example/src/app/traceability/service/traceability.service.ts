@@ -47,20 +47,20 @@ export class TraceabilityService {
   
 
   public createContract() {
-    this.web3Service.artifactsToContract(traceability_gal_artifact)
+    return this.web3Service.artifactsToContract(traceability_gal_artifact)
       .then((TraceabilityAbstraction) => {
         this.TraceabilityGalDef = TraceabilityAbstraction;
-
-        this.TraceabilityGalDef.new({
+        return this.TraceabilityGalDef.new({
           from: this.accounts[0]
-          })
-        .then( instance => {
-            console.log("Creado novo contrato!");
-            console.log(instance);
-            this.traceabilityInstance = instance;
-          }
-        ); 
-      });
+        })
+      })
+      .then( instance => {
+        console.log("Creado novo contrato!");
+        console.log(instance);
+        this.traceabilityInstance = instance;
+        return instance;
+      }
+    );;
   }
 
 

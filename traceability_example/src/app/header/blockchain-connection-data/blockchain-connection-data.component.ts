@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { LocalStorageBlockchainData } from '../../app-common/local-storage-blockchain-data';
 
 @Component({
@@ -7,6 +7,7 @@ import { LocalStorageBlockchainData } from '../../app-common/local-storage-block
   styleUrls: ['./blockchain-connection-data.component.css']
 })
 export class BlockchainConnectionDataComponent {
+  @Output() openSettings: EventEmitter<any> = new EventEmitter<any>();
 
   /** TODO: connect to local storage to obtain the contract address and display connection data */
   private _netState = true;
@@ -25,6 +26,11 @@ export class BlockchainConnectionDataComponent {
       this._network = bgNetwork;
       this._address = bgAddr;
     }
+
+    // Listen changes
+    this.bgData.getObservableAddress()
+      .subscribe(nextAddr => this._address = nextAddr);
+
   }
 
   saveDefaultSettingsForBlockchainData() {

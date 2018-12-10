@@ -5,7 +5,7 @@
         <form [formGroup]="_form" novalidate>
             <mat-form-field>
                 <input matInput placeholder="Identificador *" formControlName="productId">
-                <mat-error *ngIf="_form.controls.productId.errors">O identificador debe cumplimentarse</mat-error>
+                <mat-error *ngIf="_form.controls.productId.errors">O identificador debe cumplimentarse con díxitos</mat-error>
             </mat-form-field>
 
             <div style="display: flex; justify-content: center">

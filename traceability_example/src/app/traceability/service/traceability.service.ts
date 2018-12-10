@@ -96,7 +96,34 @@ export class TraceabilityService {
     } else {
       return undefined;
     }
+  }
 
+
+  getProductTraces(productId: number): Promise<any> {
+    return this.traceabilityInstance.getNumberOfProductTraces.call(productId)
+      .then(numOfTraces => {
+        let numberOfTraces = numOfTraces.toNumber();
+
+        if(numberOfTraces == 0){
+          return [];
+        }
+        
+        else {
+          let tracesFromPromise = [];
+          for(let i=0; i<numberOfTraces; i++){
+            tracesFromPromise.push( this.traceabilityInstance.getTraceForProduct.call(productId, i) );
+          }
+          return Promise.all(tracesFromPromise);
+        }
+
+      });
+  }
+
+
+  createProductTrace(productId: number, trace: string): Promise<any> {
+    return this.traceabilityInstance.addTraceToProduct(productId, trace, {
+      from: this.accounts[0]
+    });
   }
 
   

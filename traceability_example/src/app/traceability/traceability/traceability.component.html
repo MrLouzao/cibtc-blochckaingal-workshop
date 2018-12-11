@@ -1,6 +1,16 @@
+<app-header (openSettings)="ready=false"></app-header>
+
 <div id="traceability">
     <h1>Trazabilidade de productos</h1>
-    <product-list *ngIf="!showNewProduct && !productToDisplay" (onDetail)="doDetail($event)" (onNewProduct)="doNewProduct()"></product-list>
-    <product-detail *ngIf="productToDisplay" [productId]="productToDisplay" (hide)="productToDisplay=undefined"></product-detail>
-    <product-register *ngIf="showNewProduct" (click)="showNewProduct=false"></product-register>
+
+    <div *ngIf="!ready">
+        <contract-load (contractLoaded)="ready=true"></contract-load>
+    </div>
+
+    <div *ngIf="ready">
+        <product-list *ngIf="!showNewProduct && !productToDisplay" (onDetail)="doDetail($event)" (onNewProduct)="doNewProduct()"></product-list>
+        <product-detail *ngIf="productToDisplay" [productId]="productToDisplay" (hide)="productToDisplay=undefined"></product-detail>
+        <product-register *ngIf="showNewProduct" (hide)="showNewProduct=false"></product-register>
+    </div>
+
 </div>

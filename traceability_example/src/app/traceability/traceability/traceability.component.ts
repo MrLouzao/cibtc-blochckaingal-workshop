@@ -6,14 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./traceability.component.css']
 })
 export class TraceabilityComponent implements OnInit {
-
+  private ready: boolean = false;
   private showNewProduct: boolean = false;
   private productToDisplay: any;
 
+  constructor() {  }
 
-  constructor() { }
-
-  ngOnInit() {
+  ngOnInit(): void {
   }
 
 

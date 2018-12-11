@@ -1,3 +1,36 @@
-<p>
-  product-register works!
-</p>
+<mat-card style="width: 90%; margin-top: 1em;">
+    <h4 class="botton-line" style="padding: .5em;">Rexistro de novo producto <span class="clickable bcg-color" (click)="hide.emit()">(Ocultar)</span></h4>
+    <div class="two-col">
+      <div>
+        <form [formGroup]="_form" novalidate>
+            <mat-form-field>
+                <input matInput placeholder="Identificador *" formControlName="productId">
+                <mat-error *ngIf="_form.controls.productId.errors">O identificador debe cumplimentarse con díxitos</mat-error>
+            </mat-form-field>
+
+            <div style="display: flex; justify-content: center">
+               
+                    <div class="action-button">
+                        <button mat-mini-fab class="bg-green" (click)="performSubmit()"> 
+                            <mat-icon>edit</mat-icon>
+                        </button>
+                        <span class="card-row-value">Gardar producto</span>
+                    </div>
+              
+               
+                    <div class="action-button">
+                        <button mat-mini-fab class="bg-red"> 
+                            <mat-icon (click)="hide.emit()">delete</mat-icon>
+                        </button>
+                        <span class="card-row-value">Cancelar</span>
+                    </div>
+            </div>  
+
+        </form>
+        
+      </div>
+    </div>
+  </mat-card>
+  
+  
+  

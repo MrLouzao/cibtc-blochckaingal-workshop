@@ -16,6 +16,9 @@ import { ProductListComponent } from './traceability/product-list/product-list.c
 import { ProductDetailComponent } from './traceability/product-detail/product-detail.component';
 import { ProductRegisterComponent } from './traceability/product-register/product-register.component';
 import { NgxQRCodeModule } from 'ngx-qrcode2';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ContractLoadComponent } from './traceability/contract-load/contract-load.component';
+import { HeaderModule } from '../header/header.module';
 
 @NgModule({
     imports: [
@@ -32,9 +35,12 @@ import { NgxQRCodeModule } from 'ngx-qrcode2';
         UtilModule,
         MatTableModule,
         MatIconModule,
-        NgxQRCodeModule
+        NgxQRCodeModule,
+        FormsModule,
+        ReactiveFormsModule,
+        HeaderModule
       ],
-      declarations: [TraceabilityComponent, ProductListComponent, ProductDetailComponent, ProductRegisterComponent],
+      declarations: [TraceabilityComponent, ProductListComponent, ProductDetailComponent, ProductRegisterComponent, ContractLoadComponent],
       exports: [TraceabilityComponent]
 })
 export class TraceabilityModule {

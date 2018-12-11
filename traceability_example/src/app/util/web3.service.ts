@@ -13,6 +13,7 @@ export class Web3Service {
   private accounts: string[];
   public ready = false;
   public MetaCoin: any;
+  public TraceabilityGal: any;
   public accountsObservable = new Subject<string[]>();
 
   constructor() {
@@ -35,6 +36,7 @@ export class Web3Service {
       this.web3 = new Web3(new Web3.providers.HttpProvider('http://localhost:8545'));
     }
 
+    this.refreshAccounts();
     setInterval(() => this.refreshAccounts(), 100);
   }
 
@@ -50,6 +52,7 @@ export class Web3Service {
     return contractAbstraction;
 
   }
+
 
   private refreshAccounts() {
     this.web3.eth.getAccounts((err, accs) => {
@@ -75,4 +78,13 @@ export class Web3Service {
       this.ready = true;
     });
   }
+
+  public convertStringToHex(input: string): any {
+    return this.web3.utils.fromAscii(input);
+  }
+
+  public convertHexToString(input: any): string {
+    return this.web3.utils.toAscii(input);
+  }
+
 }

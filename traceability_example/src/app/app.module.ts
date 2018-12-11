@@ -21,12 +21,13 @@ import { HeaderComponent } from './header/header.component';
 import { CdkTableModule } from '@angular/cdk/table';
 import { NgxQRCodeModule } from 'ngx-qrcode2';
 import { BlockchainConnectionDataComponent } from './header/blockchain-connection-data/blockchain-connection-data.component';
+import { LocalStorageBlockchainData } from './app-common/local-storage-blockchain-data';
+import { HeaderModule } from './header/header.module';
+
 
 @NgModule({
   declarations: [
-    AppComponent,
-    HeaderComponent,
-    BlockchainConnectionDataComponent
+    AppComponent
   ],
   imports: [
     BrowserAnimationsModule,
@@ -44,9 +45,13 @@ import { BlockchainConnectionDataComponent } from './header/blockchain-connectio
     MetaModule,
     TraceabilityModule,
     NgxQRCodeModule,
-    MatIconModule
+    MatIconModule,
+    CommonModule,
+    HeaderModule
   ],
-  providers: [],
+  providers: [
+    LocalStorageBlockchainData
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

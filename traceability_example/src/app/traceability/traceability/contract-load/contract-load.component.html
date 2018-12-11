@@ -1,0 +1,24 @@
+<h2>Carga do contrato</h2>
+
+<div>
+
+  <p *ngIf="!showAddrField">Accede dende o contrato en uso en <button mat-raised-button color="primary" (click)="performLocalStorage()">LocalStorage</button>, dende unha <button mat-raised-button color="primary" (click)="showAddrField=true">dirección existente</button>, ou crea un <button mat-raised-button color="primary" (click)="performNewContract()">novo contrato</button></p>
+
+  <div *ngIf="showAddrField">
+      <mat-card style="width: 90%; margin-top: 1em;">
+          <h4 class="botton-line" style="padding: .5em;">Conectar a un contrato <span class="clickable bcg-color" (click)="showAddrField=false">(Ocultar)</span></h4>
+
+          <mat-icon matSuffix style="margin-right:1em">settings_input_hdmi</mat-icon>
+          <mat-form-field style="min-width: 400px">
+            <input id="contractInputAddress" [(ngModel)]="contractAddressToTry" type="text" matInput placeholder="Dirección do contrato">
+          </mat-form-field>
+
+          <button mat-raised-button class="bg-green" style="margin-left: 1em;" (click)="performFromInput()"> 
+              Conectar
+          </button>
+
+      </mat-card>
+  </div>
+
+
+</div>

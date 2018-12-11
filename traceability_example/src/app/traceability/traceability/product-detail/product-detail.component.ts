@@ -31,6 +31,7 @@ export class ProductDetailComponent implements OnInit {
       .then(traces => {
         console.log(traces);
         this.productTraces = traces;
+        this.productTraces = this.productTraces.reverse();
       })
       .catch(err => {
         console.error(err);

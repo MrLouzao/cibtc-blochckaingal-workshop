@@ -33,7 +33,16 @@ export class ProductListComponent implements OnInit {
     .then(res => {
       this.products = [];
       res.forEach(product => {
-        this.products.push({id: product.toNumber().toString(), lastState: ""});
+        this.service.getLastTraceForProduct(product.toNumber())
+          .then(val => {
+            this.products.push({id: product.toNumber().toString(), lastState: val});
+            this.redisplayTable();
+          })
+          .catch(err => {
+            console.error(err);
+            console.log("erro ao obter a traza do producto " + product.toNumber());
+          });
+        
       });
  
       this.redisplayTable();

@@ -99,6 +99,22 @@ export class TraceabilityService {
   }
 
 
+  getLastTraceForProduct(productId: number): Promise<any> {
+    return this.traceabilityInstance.getNumberOfProductTraces.call(productId)
+      .then(numOfTraces => {
+        let numberOfTraces = numOfTraces.toNumber();
+        if(numberOfTraces == 0){
+          return "Non existen eventos rexistrados para este producto";
+        } else {
+          return this.traceabilityInstance.getTraceForProduct.call(productId, numberOfTraces-1)
+          .then(trace => {
+            return trace;
+          });
+        }
+      });
+  }
+
+
   getProductTraces(productId: number): Promise<any> {
     return this.traceabilityInstance.getNumberOfProductTraces.call(productId)
       .then(numOfTraces => {

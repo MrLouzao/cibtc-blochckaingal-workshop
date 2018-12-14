@@ -12,7 +12,6 @@ export class Web3Service {
   private web3: any;
   private accounts: string[];
   public ready = false;
-  public MetaCoin: any;
   public TraceabilityGal: any;
   public accountsObservable = new Subject<string[]>();
 
@@ -33,7 +32,8 @@ export class Web3Service {
       // Hack to provide backwards compatibility for Truffle, which uses web3js 0.20.x
       Web3.providers.HttpProvider.prototype.sendAsync = Web3.providers.HttpProvider.prototype.send;
       // fallback - use your fallback strategy (local node / hosted node + in-dapp id mgmt / fail)
-      this.web3 = new Web3(new Web3.providers.HttpProvider('http://localhost:8545'));
+      //this.web3 = new Web3(new Web3.providers.HttpProvider('http://localhost:8545'));
+      this.web3 = new Web3(new Web3.providers.HttpProvider('https://ropsten.infura.io/v3/707dee4a3c634e1cb5511fc131ecefe1'))
     }
 
     this.refreshAccounts();

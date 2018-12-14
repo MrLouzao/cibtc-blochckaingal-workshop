@@ -10,9 +10,11 @@ Workshop for the CiBTC Congress. 3 examples are shown, deployed and tested on lo
 ---
 The project follows the Gitflow branching model. Move to **ropsten-release** branch to upload the contract against Ropsten testnet network.
 
+
 # Authors
 ---
-* **Luis Miguel Louzao** - creator and mantainer
+* **Luis Miguel Louzao** - member of **Blockchain.gal**, creator and mantainer
+
 
 # License
 ---

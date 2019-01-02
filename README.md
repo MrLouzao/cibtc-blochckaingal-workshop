@@ -6,6 +6,7 @@ Workshop for the CiBTC Congress. 3 examples are shown, deployed and tested on lo
 * **poll_example:** smart contract that stores a public poll with the corresponding question and answers. Also store counters of votes for each answer.
 * **traceability_example:** complete project built with angular and web3 with the purpose of storing states from products as a traceability application.
 
+
 # Branch model
 ---
 The project follows the Gitflow branching model. Move to **ropsten-release** branch to upload the contract against Ropsten testnet network.
@@ -14,7 +15,6 @@ The project follows the Gitflow branching model. Move to **ropsten-release** bra
 # Authors
 ---
 * **Luis Miguel Louzao** - member of **Blockchain.gal**, creator and mantainer
-
 
 # License
 ---

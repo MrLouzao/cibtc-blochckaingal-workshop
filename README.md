@@ -7,16 +7,10 @@ Workshop for the CiBTC Congress. 3 examples are shown, deployed and tested on lo
 * **traceability_example:** complete project built with angular and web3 with the purpose of storing states from products as a traceability application.
 
 
-## Traceability example
----
-**Ropsten address:** 0xd2c252c4daff85d509aebbd964e7ca6bf919264a
-
-**Show in Etherscan:** https://ropsten.etherscan.io/verifyContract2?a=0xd2c252c4daff85d509aebbd964e7ca6bf919264a
-
-
 # Branch model
 ---
 The project follows the Gitflow branching model. Move to **ropsten-release** branch to upload the contract against Ropsten testnet network.
+
 
 # Authors
 ---
